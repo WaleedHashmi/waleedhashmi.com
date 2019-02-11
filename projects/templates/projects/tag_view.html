@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	  
+  	<link rel="stylesheet" href="assets/style.css">
+	  
+
+    <title>Category</title>
+  </head>
+  <body>
+
+	 
+
+			  <nav class="navbar navbar-expand-md navbar-dark bg-none">
+  <a class="navbar-brand logo-text" href="#">Waleed Hashmi</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Works</a>
+	  </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#">Resume</a>
+	  </li>
+		
+	  
+	  </ul>
+	  
+	  <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="btn btn-outline-primary btn-sm hireme" href="#" >Hire me</a>
+      </li>
+		  </ul>
+		
+  </div>
+</nav> 
+	  
+	  <section class = 'page-heading'>
+		  <div class = 'row'>
+			  <div class = 'col-12 col-sm-8'>
+				<h1>Category</h1>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item"><a href="#">Works</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Category </li>
+				</ol>
+			  </div>
+			  
+		  </div>
+	  </section>
+	  
+	  
+	  <section class ='page-main'>
+          <div class ='row'>
+              {% for proj in Projects %}
+                <div class = 'col-6 col-md-4 col-xl-3'>
+                  <div class="card work-display-card">
+                      <img class="card-img-top" src="{{proj.intext_image.url}}" alt="{{proj.title | capfirst}}">
+                      <p class='card-hover-text' >{{proj.short_description}}
+                      </p>
+                      
+                      <div class="card-body">
+                        <div class = 'row'>
+                            <div class = 'col-10'>
+                                <h5 class="card-title">{{proj.title}}</h5>
+                                <p class="text-muted">{{proj.created_at| date:"F d Y"}}</p>  
+                            </div>
+                            <div class = 'col-2'>
+                                <i class="go-btn fas fa-arrow-right"></i>
+                            </div>
+                            <div class = 'col-12'>
+                                <center>
+                                <a href="#" class="view-btn">View Project</a>
+                                </center>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              {% endfor %}
+          </div> 
+	  </section>
+	  
+<footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <small class="d-block mb-3 text-muted">© 2018 Waleed Hashmi</small>
+		  </div>
+      </div>	
+</footer>
+	  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>
